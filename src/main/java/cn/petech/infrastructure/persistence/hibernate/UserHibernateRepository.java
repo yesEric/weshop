@@ -17,11 +17,11 @@ public class UserHibernateRepository extends GenericHibernateRepository<User,Str
 
     @Override
     public User loadUserByUsername(String username) throws UsernameNotFoundException{
-        List users=getSession().createCriteria(User.class).add(Restrictions.eq("username",username)).list();
+        List<User> users=getSession().createCriteria(User.class).add(Restrictions.eq("username",username)).list();
         if(users==null || users.isEmpty()){
             throw  new UsernameNotFoundException("User ["+username+"] not found...");
         }
-        return null;
+        return users.get(0);
     }
 
 }
