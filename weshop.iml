@@ -22,6 +22,7 @@
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext-resources.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/spring-mvc.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/applicationContext-dao.xml</file>
         </fileset>
       </configuration>
     </facet>

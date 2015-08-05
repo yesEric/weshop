@@ -2,9 +2,12 @@ package cn.petech.domain.model.user;
 
 
 import cn.petech.domain.common.EntityObject;
+import cn.petech.domain.common.EntityObjectSupport;
+import cn.petech.domain.common.Identity;
 
-public class User implements EntityObject<User> {
+public class User extends EntityObjectSupport<User,String> {
 
+    @Identity
     String id;
     String username;
     String password;
@@ -41,24 +44,5 @@ public class User implements EntityObject<User> {
         this.password = password;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
-        User user = (User) o;
-
-        return !(id != null ? !id.equals(user.id) : user.id != null);
-
-    }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
-
-    @Override
-    public boolean sameIdentiyAs(User other) {
-        return other!=null && other.id.equals(id);
-    }
 }
